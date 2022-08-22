@@ -40,7 +40,7 @@ a {
 .headbar {
   background-color: white;
   display: grid;
-  grid-template-columns: minmax(200px, 2fr) minmax(100px, 1fr);
+  grid-template-columns: minmax(250px, 1.5fr) minmax(120px, 1fr);
   grid-template-rows: 1fr / 1fr;
   padding: 20px 30px;
   align-items: center;
@@ -64,11 +64,11 @@ input[type="search"] {
 }
 
 .profile {
-  display: grid;
-  grid-template-columns: 40px 40px 1fr;
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
-  justify-self: flex-end;
+  gap: 20px;
 }
 
 img {
@@ -87,6 +87,10 @@ img {
   font-weight: bold;
 }
 
+.greeting img {
+  align-self: center;
+}
+
 .greeting p:nth-child(2) {
   font-size: 0.8rem;
   align-self: flex-end;
@@ -102,10 +106,11 @@ img {
 }
 
 .action-btns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  /* align-content: center; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
 }
 
 button {
