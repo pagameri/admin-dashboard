@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+body {
+  height: 100vh;
+}
+
 .container {
   display: grid;
   grid-template-columns: minmax(200px, 1fr) 5fr;
@@ -113,7 +117,7 @@ img {
   gap: 15px;
 }
 
-button {
+.action-btns button {
   width: 80px;
   padding: 7px 15px;
   border-radius: 20px;
@@ -121,15 +125,16 @@ button {
   background-color: #0ea5e9;
   font-weight: bold;
   color: white;
+  cursor: pointer;
 }
 
 .main-content {
   background-color: #e0f2fe;
   display: grid;
-  grid-template: 1fr 1fr / 1fr 25%;
-  gap: 20px;
-  padding: 20px 20px 60px;
-  justify-content: flex-end;
+  grid-template-columns: 1fr clamp(200px, 25%, 280px);
+  grid-template-rows: 1fr;
+  column-gap: 20px;
+  padding: 20px;
 }
 
 .projects-container {
@@ -157,19 +162,38 @@ button {
   box-shadow: 1px 2px 5px #a1a1aa;
   padding: 30px 20px;
   display: grid;
+  grid-template-columns: 1fr 1fr;
   align-content: space-between;
+  row-gap: 20px;
 }
 
-.span p:last-child {
-  font-size: 0.9rem;
+.card span:first-child {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.card span:last-child {
+  grid-area: 2 / 2 / 3 / 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 span p:first-child {
   font-weight: bold;
 }
 
+.span p:last-child {
+  font-size: 0.9rem;
+}
+
 .card span:last-child {
   justify-self: flex-end;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .announcements-cards,
@@ -181,6 +205,7 @@ span p:first-child {
   display: grid;
   align-content: flex-start;
   gap: 15px;
+  flex-grow: 1;
 }
 
 .announcements-cards {
