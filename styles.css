@@ -36,9 +36,13 @@ a.dashboard {
 }
 
 a {
-  color: white;
   text-decoration: none;
   font-weight: bold;
+  color: black;
+}
+
+.sidebar a {
+  color: white;
 }
 
 .headbar {
@@ -131,7 +135,7 @@ img {
 .main-content {
   background-color: #e0f2fe;
   display: grid;
-  grid-template-columns: 1fr clamp(200px, 25%, 280px);
+  grid-template-columns: 1fr max(220px, 25%);
   grid-template-rows: 1fr;
   column-gap: 20px;
   padding: 20px;
@@ -178,10 +182,6 @@ img {
   gap: 20px;
 }
 
-span p:first-child {
-  font-weight: bold;
-}
-
 .span p:last-child {
   font-size: 0.9rem;
 }
@@ -215,7 +215,6 @@ span p:first-child {
 
 .announcements-cards div div {
   font-size: 0.9rem;
-  font-weight: bold;
 }
 
 .announcements-cards div p {
@@ -236,7 +235,6 @@ span p:first-child {
 }
 
 .trending-cards a {
-  color: black;
   font-weight: normal;
   font-size: 0.9rem;
 }
