@@ -155,10 +155,6 @@ img {
   padding: 20px;
 }
 
-.projects-container {
-  grid-area: 1 / 1 / 3 / 2;
-}
-
 .projects-container > :first-child,
 .announcements-container > :first-child,
 .trending-container > :first-child {
@@ -168,12 +164,11 @@ img {
 
 .project-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(2, minmax(270px, 1fr));
   gap: 20px;
 }
 
 .card {
-  min-height: 150px;
   background-color: #f0f9ff;
   border-left: 5px solid #10b981;
   border-radius: 5px;
@@ -181,7 +176,6 @@ img {
   padding: 30px 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-content: space-between;
   row-gap: 20px;
 }
 
@@ -204,6 +198,13 @@ img {
   justify-self: flex-end;
 }
 
+.right {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  /* align-content: space-between; */ /*NOT WORKING*/
+}
+
 .announcements-cards,
 .trending-cards {
   background-color: #f0f9ff;
@@ -211,13 +212,10 @@ img {
   box-shadow: 1px 2px 5px #a1a1aa;
   padding: 30px 20px;
   display: grid;
-  align-content: flex-start;
   gap: 15px;
-  flex-grow: 1;
 }
 
 .announcements-cards {
-  display: grid;
   grid-template-rows: repeat(3, 1fr);
 }
 
@@ -249,4 +247,10 @@ img {
 
 .trending-cards a img {
   grid-area: 1 / 1 / 3 / 1;
+}
+
+@media only screen and (min-width: 1500px) {
+  .project-cards {
+    grid-template-columns: repeat(3, minmax(270px, 1fr));
+  }
 }
